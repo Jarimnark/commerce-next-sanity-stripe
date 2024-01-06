@@ -6,7 +6,7 @@ import Image from "next/image";
 import category from "@/sanity/schemas/category";
 
 async function getData() {
-  const query = `*[_type == 'product'][0...4] | order(_createdAt desc) {
+  const query = `*[_type == "product"][0...4] | order(_createdAt desc) {
     _id,
       price,
       name,
