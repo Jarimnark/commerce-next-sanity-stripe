@@ -3,13 +3,13 @@ import { simplifiedProduct } from "../interface";
 import { client } from "../lib/sanity";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import category from "@/sanity/schemas/category";
+import category from "../../sanity/schemas/category";
 
 async function getData() {
   const query = `*[_type == "product"][0...4] | order(_createdAt desc) {
     _id,
       price,
-      name,
+    name,
       "slug": slug.current,
       "categoryName": category->name,
       "imageUrl": images[0].asset->url
